@@ -153,6 +153,12 @@ namespace MikuLuaProfiler
         private void Awake()
         {
             setting = LuaDeepProfilerSetting.Instance;
+            Log.LogI(LogTag.LuaProfile, "LuaHookSetup Awake");
+        }
+
+        private void OnDestroy()
+        {
+            Log.LogI(LogTag.LuaProfile, "LuaHookSetup OnDestroy");
         }
 
         private void LateUpdate()
