@@ -1,4 +1,5 @@
-﻿#if UNITY_EDITOR || (USE_LUA_PROFILER && UNITY_ANDROID)
+#if OSG_PROFILE
+#if UNITY_EDITOR || (USE_LUA_PROFILER && UNITY_ANDROID)
 using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -122,4 +123,5 @@ namespace MikuLuaProfiler
     }
 }
 
+#endif
 #endif

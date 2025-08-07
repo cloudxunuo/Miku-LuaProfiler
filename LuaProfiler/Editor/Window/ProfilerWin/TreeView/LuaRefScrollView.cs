@@ -1,4 +1,5 @@
-﻿/*
+#if OSG_PROFILE
+/*
                #########                       
               ############                     
               #############                    
@@ -290,4 +291,5 @@ namespace MikuLuaProfiler
 #endregion
     }
 }
+#endif
 #endif

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+#if OSG_PROFILE
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -37,4 +38,5 @@ namespace MikuLuaProfiler
         }
     }
 }
+#endif
 #endif

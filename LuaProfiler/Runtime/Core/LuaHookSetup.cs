@@ -1,3 +1,4 @@
+#if OSG_PROFILE
 /*
                #########                       
               ############                     
@@ -1247,4 +1248,6 @@ end
     #endregion
 
 }
+#endif
+
 #endif

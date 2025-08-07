@@ -1,4 +1,5 @@
-﻿#if UNITY_EDITOR || USE_LUA_PROFILER
+#if OSG_PROFILE
+#if UNITY_EDITOR || USE_LUA_PROFILER
 
 using System;
 using System.Net;
@@ -121,4 +122,6 @@ namespace MikuLuaProfiler
         #endregion
     }
 }
+#endif
+
 #endif

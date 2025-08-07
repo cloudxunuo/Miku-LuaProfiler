@@ -1,3 +1,4 @@
+#if OSG_PROFILE
 /*
                #########                       
               ############                     
@@ -1269,3 +1270,5 @@ namespace MikuLuaProfiler
 #endif
       
       
+
+#endif

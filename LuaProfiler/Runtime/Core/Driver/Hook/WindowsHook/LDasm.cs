@@ -1,3 +1,4 @@
+#if OSG_PROFILE
 using System;
 
 #if UNITY_EDITOR || (USE_LUA_PROFILER && UNITY_STANDALONE_WIN)
@@ -868,4 +869,6 @@ namespace MikuLuaProfiler
 		}
 	}
 }
+#endif
+
 #endif

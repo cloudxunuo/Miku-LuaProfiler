@@ -1,4 +1,5 @@
-﻿using System;
+#if OSG_PROFILE
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -146,4 +147,5 @@ namespace MikuLuaProfiler
 
     }
 }
+#endif
 #endif
