@@ -170,7 +170,7 @@ namespace MikuLuaProfiler
                 }
                 catch (Exception e)
                 {
-                    Log.LogI(LogTag.LuaProfile, e);
+                    Log.LogI(LogTag.LuaProfile, e.ToString());
                     _Close();
                     break;
                 }
@@ -209,7 +209,7 @@ namespace MikuLuaProfiler
                 {
                     if (tcpClient.Connected)
                     {
-                        Log.LogI(LogTag.LuaProfile, e);
+                        Log.LogI(LogTag.LuaProfile, e.ToString());
                     }
                     _Close();
                     break;

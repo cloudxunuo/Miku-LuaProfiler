@@ -206,7 +206,7 @@ namespace MikuLuaProfiler
             }
             catch (Exception e)
             {
-                Log.LogE(LogTag.LuaProfile, e);
+                Log.LogE(LogTag.LuaProfile, e.ToString());
                 result = false;
             }
             if (showProcess)

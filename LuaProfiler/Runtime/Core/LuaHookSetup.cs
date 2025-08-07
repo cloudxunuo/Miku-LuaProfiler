@@ -685,7 +685,7 @@ namespace MikuLuaProfiler
             if (LuaDLL.lua_type(L, -1) != LuaTypes.LUA_TTABLE &&
                 LuaDLL.lua_type(L, -2) != LuaTypes.LUA_TTABLE)
             {
-                Log.LogE(LogTag.LuaProfile, LuaDLL.lua_type(L, -1));
+                Log.LogE(LogTag.LuaProfile, LuaDLL.lua_type(L, -1).ToString());
                 LuaDLL.lua_settop(L, oldTop);
                 historyRef = -100;
                 staticHistoryRef = -100;
