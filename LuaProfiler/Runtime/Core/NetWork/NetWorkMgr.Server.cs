@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using Debug = UnityEngine.Debug;
+using Assets.Plugins.Common;
 
 namespace MikuLuaProfiler
 {

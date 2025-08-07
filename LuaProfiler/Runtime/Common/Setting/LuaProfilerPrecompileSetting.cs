@@ -40,6 +40,7 @@ namespace MikuLuaProfiler
     using System.Collections.Generic;
     using System.IO;
     using UnityEngine;
+    using Assets.Plugins.Common;
 #if UNITY_EDITOR
     using UnityEditor;
 #endif

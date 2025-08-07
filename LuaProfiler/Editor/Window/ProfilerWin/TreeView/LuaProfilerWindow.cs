@@ -40,6 +40,7 @@ using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
 using System;
+using Assets.Plugins.Common;
 
 namespace MikuLuaProfiler
 {

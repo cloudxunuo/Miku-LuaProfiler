@@ -42,6 +42,7 @@ namespace MikuLuaProfiler
     using System.Text;
     using UnityEditor;
     using UnityEngine;
+    using Assets.Plugins.Common;
     using RefDict = System.Collections.Generic.Dictionary<string, System.Collections.Generic.HashSet<string>>;
     public class LuaRefScrollView
     {

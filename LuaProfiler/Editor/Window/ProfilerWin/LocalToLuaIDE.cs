@@ -39,6 +39,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEngine;
+using Assets.Plugins.Common;
 
 namespace MikuLuaProfiler {
     public class LocalToLuaIDE

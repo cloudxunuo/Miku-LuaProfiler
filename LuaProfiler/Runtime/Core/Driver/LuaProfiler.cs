@@ -40,6 +40,7 @@ using System.IO;
 using System.Reflection;
 using RefDict = System.Collections.Generic.Dictionary<string, System.Collections.Generic.HashSet<string>>;
 using UnityEngine;
+using Assets.Plugins.Common;
 #if UNITY_5_5_OR_NEWER
 using UnityEngine.Profiling;
 #endif

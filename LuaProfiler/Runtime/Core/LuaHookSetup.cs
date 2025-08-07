@@ -39,6 +39,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using UnityEngine;
+using Assets.Plugins.Common;
 
 namespace MikuLuaProfiler
 {

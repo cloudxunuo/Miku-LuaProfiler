@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Reflection;
 using System.Threading;
 using UnityEngine;
+using Assets.Plugins.Common;
 #if UNITY_5_6_OR_NEWER && UNITY_EDITOR
 namespace MikuLuaProfiler
 {

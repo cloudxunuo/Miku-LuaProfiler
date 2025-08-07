@@ -43,6 +43,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
+using Assets.Plugins.Common;
 
 namespace MikuLuaProfiler
 {

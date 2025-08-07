@@ -43,6 +43,7 @@ namespace MikuLuaProfiler
     using UnityEditor;
     using UnityEditor.IMGUI.Controls;
     using UnityEngine;
+    using Assets.Plugins.Common;
 
 
     #region item

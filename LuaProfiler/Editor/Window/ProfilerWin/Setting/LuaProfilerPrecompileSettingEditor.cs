@@ -40,6 +40,7 @@ namespace MikuLuaProfiler
     using System.IO;
     using UnityEditor;
     using UnityEngine;
+    using Assets.Plugins.Common;
 
     [CustomEditor(typeof(LuaProfilerPrecompileSetting))]
     public class LuaProfilerPrecompileSettingEditor : Editor

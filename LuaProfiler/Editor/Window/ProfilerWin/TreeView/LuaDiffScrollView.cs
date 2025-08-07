@@ -42,6 +42,7 @@ namespace MikuLuaProfiler
     using System.Text;
     using UnityEditor;
     using UnityEngine;
+    using Assets.Plugins.Common;
     public class LuaDiffScrollView
     {
         private bool m_isStaticRecord = false;
