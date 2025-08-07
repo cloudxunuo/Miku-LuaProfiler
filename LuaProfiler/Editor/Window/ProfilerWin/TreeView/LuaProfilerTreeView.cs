@@ -745,7 +745,7 @@ namespace MikuLuaProfiler
                 var item = (LuaProfilerTreeViewItem)selectItem;
                 if (item.line == -1)
                 {
-                    Debug.Log("please wait");
+                    Log.LogI(LogTag.LuaProfile, "please wait");
                     return;
                 }
 
@@ -755,7 +755,7 @@ namespace MikuLuaProfiler
                     int line = item.line;
                     if (!File.Exists(fileName))
                     {
-                        Debug.Log(fileName);
+                        Log.LogI(LogTag.LuaProfile, fileName);
                     }
                     LocalToLuaIDE.OnOpenAsset(fileName, line);
                 }

@@ -180,11 +180,11 @@ namespace MikuLuaProfiler
                 {
                     if (r.cmd == 1)
                     {
-                        Debug.Log("<color=#00ff00>add " + r.name + "</color>");
+                        Log.LogI(LogTag.LuaProfile, "<color=#00ff00>add " + r.name + "</color>");
                     }
                     else if (r.cmd == 0)
                     {
-                        Debug.Log("<color=#ff0000>rm " + r.name + "</color>");
+                        Log.LogI(LogTag.LuaProfile, "<color=#ff0000>rm " + r.name + "</color>");
                     }
                 }
                 if (r.frameCount > endFrame)

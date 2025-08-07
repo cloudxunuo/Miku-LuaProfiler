@@ -80,9 +80,9 @@ namespace MikuLuaProfiler {
                 for (int i = 0; i < paths.Count; i++)
                 {
                     string projectRootPath = paths[i];
-                    Debug.Log(projectRootPath);
+                    Log.LogI(LogTag.LuaProfile, projectRootPath);
                     filePath = Path.Combine(projectRootPath.Trim(), cacheFilePath);//+ ".lua"; 
-                    Debug.Log(filePath);
+                    Log.LogI(LogTag.LuaProfile, filePath);
                     if (File.Exists(filePath + ".lua"))
                     {
                         filePath = filePath + ".lua";
@@ -114,7 +114,7 @@ namespace MikuLuaProfiler {
                     && !GetLuaPathInCurrentFile(file, out filePath)
                     )
                 {
-                    Debug.LogError("this is chunk file");
+                    Log.LogE(LogTag.LuaProfile, "this is chunk file");
                     return;
                 }
             }
@@ -217,7 +217,7 @@ namespace MikuLuaProfiler {
             else if (editorPath.IndexOf("idea") != -1 || editorPath.IndexOf("clion") != -1 || editorPath.IndexOf("rider") != -1)
             {
                 procArgument = string.Format("--line {0} {1}", line, filePath);
-                Debug.Log(procArgument);
+                Log.LogI(LogTag.LuaProfile, procArgument);
             }
             else
             {
@@ -246,7 +246,7 @@ namespace MikuLuaProfiler {
             LuaDeepProfilerSetting.Instance.luaDir.Clear();
             LuaDeepProfilerSetting.Instance.luaIDE = "";
             AssetDatabase.SaveAssets();
-            Debug.Log("Clear Suceess");
+            Log.LogI(LogTag.LuaProfile, "Clear Suceess");
         }
 
         public static void SetExternalEditorPath()
@@ -257,7 +257,7 @@ namespace MikuLuaProfiler {
             if (path != "")
             {
                 LuaDeepProfilerSetting.Instance.luaIDE = path;
-                Debug.Log("Set Lua IDE Path: " + path);
+                Log.LogI(LogTag.LuaProfile, "Set Lua IDE Path: " + path);
             }
         }
 
@@ -273,7 +273,7 @@ namespace MikuLuaProfiler {
             if (path != "")
             {
                 LuaDeepProfilerSetting.Instance.AddLuaDir(path);
-                Debug.Log("Set Lua Project Root Path: " + path);
+                Log.LogI(LogTag.LuaProfile, "Set Lua Project Root Path: " + path);
             }
         }
         #endregion

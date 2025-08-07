@@ -117,7 +117,7 @@ namespace MikuLuaProfiler
                 }
                 catch (Exception e)
                 {
-                    Debug.Log(e.ToString());
+                    Log.LogI(LogTag.LuaProfile, e.ToString());
                     break;
                 }
                 Thread.Sleep(10);

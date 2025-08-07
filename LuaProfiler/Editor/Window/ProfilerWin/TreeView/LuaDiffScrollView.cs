@@ -234,7 +234,7 @@ namespace MikuLuaProfiler
                     sb.AppendLine(item);
                 }
                 LuaProfilerWindow.ClearConsole();
-                Debug.Log(sb.ToString());
+                Log.LogI(LogTag.LuaProfile, sb.ToString());
             }
             GUILayout.EndHorizontal();
         }

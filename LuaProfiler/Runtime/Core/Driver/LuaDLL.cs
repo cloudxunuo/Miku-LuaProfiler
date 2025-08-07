@@ -503,11 +503,11 @@ namespace MikuLuaProfiler
                 }
                 else // if we get here, this means the module isn't related to Lua at all
                 {
-                    UnityEngine.Debug.Log("no version");
+                    Log.LogI(LogTag.LuaProfile, "no version");
                     return;
                 }
 
-                UnityEngine.Debug.Log("lua versin:" + LUA_VERSION);
+                Log.LogI(LogTag.LuaProfile, "lua versin:" + LUA_VERSION);
 
                 if (luaL_newstate_hook == null)
                 {
@@ -999,7 +999,7 @@ namespace MikuLuaProfiler
         [MonoPInvokeCallbackAttribute(typeof(luaL_newstate_fun))]
         public static IntPtr luaL_newstate_replace()
         {
-			UnityEngine.Debug.Log("test newstate success");
+			Log.LogI(LogTag.LuaProfile, "test newstate success");
             lock (m_Lock)
             {
                 IntPtr intPtr = luaL_newstate();

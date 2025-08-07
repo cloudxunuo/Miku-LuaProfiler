@@ -151,7 +151,7 @@ namespace MikuLuaProfiler
             {
                 if (LuaProfilerPrecompileSetting.CompileLuaScript(true))
                 {
-                    Debug.Log("success");
+                    Log.LogI(LogTag.LuaProfile, "success");
                     foreach (var item in settings.luaDirList)
                     {
                         System.Diagnostics.Process.Start("explorer.exe", Environment.CurrentDirectory + "\\" + settings.outFolder);
@@ -159,7 +159,7 @@ namespace MikuLuaProfiler
                 }
                 else
                 {
-                    Debug.LogError("fail");
+                    Log.LogE(LogTag.LuaProfile, "fail");
                 }
                 EditorUtility.SetDirty(settings);
                 AssetDatabase.SaveAssets();

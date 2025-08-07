@@ -49,7 +49,7 @@ namespace MikuLuaProfiler
             }
             else
             {
-                Debug.LogError("get dlopen addr fail");
+                Log.LogE(LogTag.LuaProfile, "get dlopen addr fail");
             }
         }
 

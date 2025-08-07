@@ -69,7 +69,7 @@ namespace MikuLuaProfiler
         {
             if (EditorApplication.isCompiling) 
             {
-                Debug.LogError("is compiling");
+                Log.LogE(LogTag.LuaProfile, "is compiling");
                 return;
             }
 

@@ -54,7 +54,7 @@ namespace MikuLuaProfiler
         #region private
         private static void AcceptThread()
         {
-            Debug.Log("<color=#00ff00>begin listerner</color>");
+            Log.LogI(LogTag.LuaProfile, "<color=#00ff00>begin listerner</color>");
             tcpClient = null;
 
             while (true)
@@ -75,7 +75,7 @@ namespace MikuLuaProfiler
         private static void AcceptAClient()
         {
             var newTcpClient = tcpLister.AcceptTcpClient();
-            Debug.Log("<color=#00ff00>link start</color>");
+            Log.LogI(LogTag.LuaProfile, "<color=#00ff00>link start</color>");
             
             // 有新的连接，强制踢掉旧连接（不然偶尔会出现莫名挂掉无法连接） TODO: 支持多客户端并发连接
             _Close();

@@ -75,7 +75,7 @@ namespace MikuLuaProfiler
                 File.WriteAllText(path, "1");
             }
             
-            Debug.Log("open lua profiler server success");
+            Log.LogI(LogTag.LuaProfile, "open lua profiler server success");
         }
 
         public static void CloseServer()
@@ -85,7 +85,7 @@ namespace MikuLuaProfiler
             {
                 File.Delete(path);
             }
-            Debug.Log("close lua profiler server success");
+            Log.LogI(LogTag.LuaProfile, "close lua profiler server success");
         }
 
         private static Action<Sample> m_onReceiveSample;
@@ -206,7 +206,7 @@ namespace MikuLuaProfiler
             }
             catch(Exception e)
             {
-                Debug.LogError(e);
+                Log.LogE(LogTag.LuaProfile, e);
             }
         }
 
@@ -260,7 +260,7 @@ namespace MikuLuaProfiler
                 return;
             }
             sample.fahter = beginSampleMemoryStack.Count > 0 ? beginSampleMemoryStack.Peek() : null;
-            //UnityEngine.Debug.Log(sample.name);
+            //Log.LogI(LogTag.LuaProfile, sample.name);
             if (beginSampleMemoryStack.Count == 0)
             {
                 var setting = LuaDeepProfilerSetting.Instance;

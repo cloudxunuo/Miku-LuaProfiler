@@ -88,7 +88,7 @@ namespace MikuLuaProfiler
                     instance = AssetDatabase.LoadAssetAtPath<LuaProfilerPrecompileSetting>("Assets/LuaProfilerPrecompileSetting.asset");
                     if (instance == null)
                     {
-                        UnityEngine.Debug.Log("Lua Profiler: cannot find integration settings, creating default settings");
+                        Log.LogI(LogTag.LuaProfile, "Lua Profiler: cannot find integration settings, creating default settings");
                         instance = CreateInstance<LuaProfilerPrecompileSetting>();
                         instance.name = "Lua Profiler LuaDeepProfiler Setting";
 #if UNITY_EDITOR
@@ -204,7 +204,7 @@ namespace MikuLuaProfiler
             }
             catch (Exception e)
             {
-                Debug.LogError(e);
+                Log.LogE(LogTag.LuaProfile, e);
                 result = false;
             }
             if (showProcess)

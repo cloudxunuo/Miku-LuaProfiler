@@ -65,10 +65,11 @@ namespace MikuLuaProfiler
         }
         #endregion
 
-
-#if UNITY_5 || UNITY_2017_1_OR_NEWER
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-#endif
+// disable by garraxu 我们的Unity版本，这个属性有时候会失效
+// 需要在我们的Lua虚拟机启动前手动调用，最好用OSG_PROFILE包裹起来
+// #if UNITY_5 || UNITY_2017_1_OR_NEWER
+//         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+// #endif
         public static void OnStartGame()
         {
 #if UNITY_EDITOR_OSX
@@ -104,7 +105,7 @@ namespace MikuLuaProfiler
                     return;
                 }
 #endif
-                Debug.Log("<color=#00ff00>OnStartGame</color>");
+                Log.LogI(LogTag.LuaProfile, "<color=#00ff00>OnStartGame</color>");
                 LuaDLL.Uninstall();
                 IntPtr LuaModule = LuaDLL.CheckHasLuaDLL();
                 if (LuaModule != IntPtr.Zero)
@@ -663,13 +664,13 @@ namespace MikuLuaProfiler
 
             if (staticHistoryRef == -100)
             {
-                Debug.LogError("has no history");
+                Log.LogE(LogTag.LuaProfile, "has no history");
                 return null;
             }
 
             if (historyRef == -100)
             {
-                Debug.LogError("has no history");
+                Log.LogE(LogTag.LuaProfile, "has no history");
                 return null;
             }
 
@@ -682,7 +683,7 @@ namespace MikuLuaProfiler
             if (LuaDLL.lua_type(L, -1) != LuaTypes.LUA_TTABLE &&
                 LuaDLL.lua_type(L, -2) != LuaTypes.LUA_TTABLE)
             {
-                Debug.LogError(LuaDLL.lua_type(L, -1));
+                Log.LogE(LogTag.LuaProfile, LuaDLL.lua_type(L, -1));
                 LuaDLL.lua_settop(L, oldTop);
                 historyRef = -100;
                 staticHistoryRef = -100;
@@ -740,7 +741,7 @@ namespace MikuLuaProfiler
             }
             else
             {
-                Debug.Log(script);
+                Log.LogI(LogTag.LuaProfile, script);
             }
             LuaDLL.isHook = true;
             LuaDLL.lua_settop(L, oldTop);
@@ -1229,7 +1230,7 @@ end
             string error = LuaHook.GetRefString(L, 1);
             LuaDLL.lua_settop(L, oldTop);
 
-            Debug.LogError(string.Format("{0}\n{1}", error, debugInfo));
+            Log.LogE(LogTag.LuaProfile, string.Format("{0}\n{1}", error, debugInfo));
             return 0;
         }
 

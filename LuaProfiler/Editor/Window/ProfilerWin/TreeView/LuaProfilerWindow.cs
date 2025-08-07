@@ -400,7 +400,7 @@ namespace MikuLuaProfiler
                     {
                         ClearConsole();
                         NetWorkMgrClient.Disconnect();
-                        UnityEngine.Debug.Log("<color=#ff0000>disconnect</color>");
+                        Log.LogI(LogTag.LuaProfile, "<color=#ff0000>disconnect</color>");
                     }
                 }
 
@@ -454,7 +454,7 @@ namespace MikuLuaProfiler
                 if (!LuaDeepProfilerSetting.Instance.isLocal)
                 {
                     //NetWorkMgrClient.SendCmd(3);
-                    Debug.Log("暂时只支持本地模式");
+                    Log.LogI(LogTag.LuaProfile, "暂时只支持本地模式");
                 }
                 else
                 {
@@ -468,7 +468,7 @@ namespace MikuLuaProfiler
                 if (!LuaDeepProfilerSetting.Instance.isLocal)
                 {
                     //NetWorkServer.SendCmd(1);
-                    Debug.Log("暂时只支持本地模式");
+                    Log.LogI(LogTag.LuaProfile, "暂时只支持本地模式");
                 }
                 else
                 {
@@ -481,7 +481,7 @@ namespace MikuLuaProfiler
                 if (!LuaDeepProfilerSetting.Instance.isLocal)
                 {
                     //NetWorkServer.SendCmd(2);
-                    Debug.Log("暂时只支持本地模式");
+                    Log.LogI(LogTag.LuaProfile, "暂时只支持本地模式");
                 }
                 else
                 {

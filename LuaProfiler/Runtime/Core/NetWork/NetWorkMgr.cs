@@ -117,7 +117,7 @@ namespace MikuLuaProfiler
         // 接受请求
         private static void DoReceiveMessage(NetworkStream ns)
         {
-            UnityEngine.Debug.Log("<color=#00ff00>begin to receive</color>");
+            Log.LogI(LogTag.LuaProfile, "<color=#00ff00>begin to receive</color>");
 
             MBinaryReader br = new MBinaryReader(ns);
             ;
@@ -168,7 +168,7 @@ namespace MikuLuaProfiler
                 }
                 catch (Exception e)
                 {
-                    UnityEngine.Debug.Log(e);
+                    Log.LogI(LogTag.LuaProfile, e);
                     _Close();
                     break;
                 }
@@ -207,7 +207,7 @@ namespace MikuLuaProfiler
                 {
                     if (tcpClient.Connected)
                     {
-                        UnityEngine.Debug.Log(e);
+                        Log.LogI(LogTag.LuaProfile, e);
                     }
                     _Close();
                     break;
@@ -226,7 +226,7 @@ namespace MikuLuaProfiler
         public static void AddListener<TPacket>(MsgHandlerDelegate<TPacket> handler)
             where TPacket : PacketBase
         {
-            // Debug.Log("AddListener: " + typeof(TPacket));
+            // Log.LogI(LogTag.LuaProfile, "AddListener: " + typeof(TPacket));
             Delegate oldHandler;
             var msgType = typeof(TPacket);
             if (_msgHandlers.TryGetValue(msgType, out oldHandler))
@@ -242,7 +242,7 @@ namespace MikuLuaProfiler
         public static void RemoveListener<TPacket>(MsgHandlerDelegate<TPacket> handler)
             where TPacket : PacketBase
         {
-            // Debug.Log("RemoveListener: " + typeof(TPacket));
+            // Log.LogI(LogTag.LuaProfile, "RemoveListener: " + typeof(TPacket));
             Delegate @delegate;
             var msgType = typeof(TPacket);
             if (_msgHandlers.TryGetValue(msgType, out @delegate))
@@ -273,13 +273,13 @@ namespace MikuLuaProfiler
             }
             else
             {
-                Debug.LogError("Invalid handler for msg: " + pkg.ToString());
+                Log.LogE(LogTag.LuaProfile, "Invalid handler for msg: " + pkg.ToString());
             }
         }
         
         internal static void RemoveAllListeners()
         {
-            // Debug.Log("RemoveAllListeners: ");
+            // Log.LogI(LogTag.LuaProfile, "RemoveAllListeners: ");
             var handlerTypes = new Type[_msgHandlers.Keys.Count];
             _msgHandlers.Keys.CopyTo(handlerTypes, 0);
 
