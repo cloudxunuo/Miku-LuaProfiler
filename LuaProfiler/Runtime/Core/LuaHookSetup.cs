@@ -130,7 +130,6 @@ namespace MikuLuaProfiler
 #endif
                 GameObject go = new GameObject();
                 go.name = "MikuLuaProfiler";
-                go.hideFlags = HideFlags.HideAndDontSave;
                 DontDestroyOnLoad(go);
                 go.AddComponent<HookLuaSetup>();
                 if (!setting.isLocal)
@@ -187,6 +186,7 @@ namespace MikuLuaProfiler
 
         private void OnApplicationQuit()
         {
+            Log.LogI(LogTag.LuaProfile, "OnApplicationQuit");
 #if UNITY_EDITOR
             desotryCount = 0;
             Destroy(gameObject);

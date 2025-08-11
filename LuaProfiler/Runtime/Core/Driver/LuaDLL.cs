@@ -520,6 +520,11 @@ namespace MikuLuaProfiler
                     hooker.Install();
                     luaL_newstate = (luaL_newstate_fun)hooker.GetProxyFun(typeof(luaL_newstate_fun));
                     luaL_newstate_hook = hooker;
+                    Log.LogI(LogTag.LuaProfile, "lua hook:" + luaL_newstate_hook?.ToString());
+                }
+                else
+                {
+                    Log.LogI(LogTag.LuaProfile, "lua hook already:" + luaL_newstate_hook?.ToString());
                 }
 
                 if (lua_close_hook == null)
@@ -599,6 +604,7 @@ namespace MikuLuaProfiler
                         hooker.Install();
                         luaL_loadbufferx = (luaL_loadbufferx_fun)hooker.GetProxyFun(typeof(luaL_loadbufferx_fun));
                         luaL_loadbuffer_hook = hooker;
+                        Log.LogI(LogTag.LuaProfile, "luaL_loadbuffer_hook v={0} hooker={1}", LUA_VERSION, hooker);
                     }
                     else
                     {
@@ -609,6 +615,7 @@ namespace MikuLuaProfiler
                         hooker.Install();
                         luaL_loadbuffer = (luaL_loadbuffer_fun)hooker.GetProxyFun(typeof(luaL_loadbuffer_fun));
                         luaL_loadbuffer_hook = hooker;
+                        Log.LogI(LogTag.LuaProfile, "luaL_loadbuffer_hook v2={0} hooker={1}", LUA_VERSION, hooker);
                     }
                 }
 
@@ -1141,8 +1148,10 @@ namespace MikuLuaProfiler
                     {
                         name = "chunk";
                     }
-                    // dostring
-                    if (name.Length == (int)size)
+                    // dostring 原作者判断dostring的方式有误
+                    // name[0] != '@' add by garra
+                    // osg的lua文件在加载前一定会加一个@字符
+                    if (name.Length == (int)size && name[0] != '@')
                     {
                         name = "chunk"; 
                     }
