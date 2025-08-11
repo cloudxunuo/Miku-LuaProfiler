@@ -1,4 +1,3 @@
-#if OSG_PROFILE
 /*
                #########                       
               ############                     
@@ -37,6 +36,7 @@ __________#_______####_______####______________
 using System;
 using System.IO;
 
+#if OSG_PROFILE
 #if UNITY_EDITOR || USE_LUA_PROFILER
 namespace MikuLuaProfiler
 {

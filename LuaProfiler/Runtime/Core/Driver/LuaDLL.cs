@@ -1,4 +1,3 @@
-#if OSG_PROFILE
 /*
                #########                       
               ############                     
@@ -34,6 +33,7 @@ __________#_______####_______####______________
 * ==============================================================================
 */
 
+#if OSG_PROFILE
 #if UNITY_EDITOR || USE_LUA_PROFILER
 using System;
 using System.Diagnostics;

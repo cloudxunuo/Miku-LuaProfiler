@@ -1,4 +1,3 @@
-#if OSG_PROFILE
 /*
                #########                       
               ############                     
@@ -33,6 +32,8 @@ __________#_______####_______####______________
 * Purpose:  
 * ==============================================================================
 */
+
+#if OSG_PROFILE
 #if UNITY_5_6_OR_NEWER && UNITY_EDITOR
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
 #if OSG_PROFILE
 #if UNITY_EDITOR || USE_LUA_PROFILER
 using System;
-
+ 
 namespace MikuLuaProfiler
 {
     public interface NativeUtilInterface
@@ -11,7 +11,7 @@ namespace MikuLuaProfiler
         void HookLoadLibrary(Action<IntPtr> callBack);
         INativeHooker CreateHook();
     }
-
+ 
     public interface INativeHooker
     {
         void Init(IntPtr targetPtr, IntPtr replacementPtr);

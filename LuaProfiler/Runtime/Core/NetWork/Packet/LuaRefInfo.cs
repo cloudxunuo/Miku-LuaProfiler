@@ -16,7 +16,7 @@ namespace MikuLuaProfiler
             }
         }
         
-
+ 
         #region field
         public byte cmd; //1添加、0移除
         public int frameCount;

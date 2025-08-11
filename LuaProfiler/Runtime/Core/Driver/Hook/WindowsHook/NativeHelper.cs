@@ -1,4 +1,3 @@
-#if OSG_PROFILE
 /*
                #########                       
               ############                     
@@ -33,6 +32,8 @@ __________#_______####_______####______________
 * Purpose:  
 * ==============================================================================
 */
+
+#if OSG_PROFILE
 #if UNITY_EDITOR || (USE_LUA_PROFILER && UNITY_STANDALONE_WIN)
 namespace MikuLuaProfiler
 {

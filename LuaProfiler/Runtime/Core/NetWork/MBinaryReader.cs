@@ -11,16 +11,16 @@ namespace MikuLuaProfiler
         public MBinaryReader(Stream input) : base(input)
         {
         }
-
+ 
         public MBinaryReader(Stream input, Encoding encoding) : base(input, encoding)
         {
         }
-
+ 
         private Dictionary<int, string> m_strCacheDict = new Dictionary<int, string>(4096);
         public override string ReadString()
         {
             string result = null;
-
+ 
             bool isRef = ReadBoolean();
             int index = ReadInt32();
             if (!isRef)

@@ -1,12 +1,41 @@
+/*
+                #########                       
+               ############                     
+               #############                    
+              ##  ###########                   
+             ###  ###### #####                  
+             ### #######   ####                 
+            ###  ########## ####                
+           ####  ########### ####               
+          ####   ###########  #####             
+         #####   ### ########   #####           
+        #####   ###   ########   ######         
+       ######   ###  ###########   ######       
+      ######   #### ##############  ######      
+     #######  #####################  ######     
+     #######  ######################  ######    
+    #######  ###### #################  ######   
+    #######  ###### ###### #########   ######   
+    #######    ##  ######   ######     ######   
+    #######        ######    #####     #####    
+     ######        #####     #####     ####     
+      #####        ####      #####     ###      
+       #####       ###        ###      #        
+         ###       ###        ###               
+          ##       ###        ###               
+ __________#_______####_______####______________
+                我们的未来没有BUG                
+*/
+
 #if OSG_PROFILE
 #if UNITY_EDITOR || (USE_LUA_PROFILER && UNITY_STANDALONE_WIN)
 using System;
 using System.Runtime.InteropServices;
-
+ 
 namespace MikuLuaProfiler
 {
-	public class WindowsNativeUtil : NativeUtilInterface
-	{
+    public class WindowsNativeUtil : NativeUtilInterface
+    {
 		[DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
 		private static extern IntPtr GetModuleHandle(string InPath);
 		
